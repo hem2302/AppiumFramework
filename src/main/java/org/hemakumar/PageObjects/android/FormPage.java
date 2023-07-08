@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
+import io.appium.java_client.android.Activity;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
@@ -56,8 +57,16 @@ public class FormPage extends AndroidActions {
 		scrollToText(countryName);
 		driver.findElement(By.xpath("//android.widget.TextView[@text='" + countryName + "']")).click();
 	}
+
 	public ProductCatalogue submitForm() {
 		letsShopButton.click();
-		return  new ProductCatalogue(driver);
+		return new ProductCatalogue(driver);
+	}
+
+	public void setActivity() throws InterruptedException {
+		Activity activity = new Activity("com.androidsample.generalstore",
+				"com.androidsample.generalstore.MainActivity");
+		driver.startActivity(activity);
+		Thread.sleep(200000);
 	}
 }

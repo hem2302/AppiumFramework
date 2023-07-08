@@ -1,6 +1,7 @@
 package org.hemakumar;
 
 import org.hemakumar.PageObjects.iOS.AlertViews;
+import org.hemakumar.baseTest.IOSBaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 

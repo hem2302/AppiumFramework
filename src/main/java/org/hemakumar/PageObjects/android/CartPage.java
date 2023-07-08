@@ -62,11 +62,7 @@ public class CartPage extends AndroidActions {
 		acceptButton.click();
 	}
 
-	public Double getFormattedAmount(String amount) {
-		Double price = Double.parseDouble(amount.substring(1));
-		return price;
 
-	}
 
 	public void submitOrder() {
 		checkBox.click();
